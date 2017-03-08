@@ -16,9 +16,10 @@ function loadImages()
 
 function setImage(image)
 {
-    images.push(image);
+    var imagess = [];
+    imagess.push(image);
 
-    data = JSON.stringify(images);
+    data = JSON.stringify(imagess);
     localStorage.setItem("images",data);
 }
 
