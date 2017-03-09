@@ -1,26 +1,60 @@
 
-var images = [];
-
-function loadImages()
+function gallery()
 {
-  for (var i = 0; i < 20; i++)
+
+
+}
+
+function add_Img()
+{
+  var comment = $("#comment").val();
+  $("#fileToUpload").on('submit', function(e)
   {
-    var div = document.createElement("DIV");
-    var img = document.createElement("IMG");
+    e.preventDefault();
+    $("#message").empty();
+    $("#loading").show();
 
-    div.appendChild(img);
+    $.ajax({
+      url: 'uploadImg.php',
+      type: 'POST',
+      contentType: false,
+      cache: false,
+      processData:false,
+      dataType: comment,
+      data: {comment: comment},
 
-    $(".gallery").append(div);
-  }
+    })
+    .done(function(data) {
+      $("#loading").hide();
+      $("#message").html(data)
+    });
+  });
+
+  previewImg();
 }
 
-function setImage(image)
+function previewImg()
 {
-    var imagess = [];
-    imagess.push(image);
+    $("#file").change(function()
+     {
+        $("#message").empty();
 
-    data = JSON.stringify(imagess);
-    localStorage.setItem("images",data);
+        var file = this.files[0];
+        var img  = file.type;
+
+        var reader = new FileReader();
+        reader.onload = imgLoaded;
+        reader.readAsDataURL(this.files[0]);
+
+    });
 }
 
-var storageImage - localStorage.getItem("images");
+function imgLoaded(e)
+{
+  $("#file").css("color","red");
+  $('#image_preview').css("display", "block");
+  $('#preview').attr('src', e.target.result);
+  $('#preview').attr('width', '250px');
+  $('#preview').attr('height', '230px');
+
+}
