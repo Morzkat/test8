@@ -31,8 +31,10 @@ class conexion extends mysqli
   {
     while ($result = $array->fetch_assoc())
     {
-      echo '<a class="image-link" href="'.$result["url"].'"data-lightbox="set" data-title="'.$result["comment"].'">
-      <img class="image" with="100" height ="100" src="'.$result["url"].'"/></a>';
+      echo '<div clas="container"><a class="image-link" href="'.$result["url"].'"data-lightbox="set" data-title="'.$result["comment"].'">
+      <img class="image" with="100" height ="100" src="'.$result["url"].'"/></a>
+      <button type="button" name="button">Borrar imagen</button></div>';
+
     }
   }
 }
