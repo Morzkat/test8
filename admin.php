@@ -1,6 +1,7 @@
 <?php
 
-
+require 'modals/addImage.php';
+require 'modals/deleteImage.php';
 
 ?>
 
@@ -22,19 +23,9 @@
   </head>
   <body>
 
-    <form id ="fileToUpload" enctype="multipart/form-data" class="" action="" method="post">
-
-      <div id="imgPreview"><img src="noimage.png" id="preview" alt=""></div>
-
-      <h3>IMG</h3>
-
-      <input type="file" name="file" id="file" value="" required accept="image/*">
-      <textarea name="name" id="comment" rows="2" cols="60" placeholder="comentario de la imagen" style="resize:none"></textarea><br>
-      <input type="submit" value="Subir Imagen" name="button" class="submit" value="">
-    </form>
-
-    <h4 id="loading">loading</h4>
-    <div id="message"></div>
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addImage" name="button">Agregar imagen</button>
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#deleteImage" name="button">Borrar imagen</button>
+    <button type="button" name="button">Modificar info imagen</button>
 
     <script src="https://cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bootstrap/3.3.5/js/bootstrap.min.js"></script>

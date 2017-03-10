@@ -12,7 +12,6 @@ function add_Img()
   {
     e.preventDefault();
     $("#message").empty();
-    $("#loading").show();
 
     $.ajax({
       url: 'uploadImg.php',
@@ -20,8 +19,7 @@ function add_Img()
       contentType: false,
       cache: false,
       processData:false,
-      dataType: comment,
-      data: {comment: comment},
+      data: new FormData(this),
 
     })
     .done(function(data) {

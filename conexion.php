@@ -26,7 +26,15 @@ class conexion extends mysqli
       <img class="image" with="250" height ="250" src="'.$result["url"].'"/></a>';
     }
   }
-    // echo '  alt="" /></a>';
+
+  function show_Photos_For_Delete($array)
+  {
+    while ($result = $array->fetch_assoc())
+    {
+      echo '<a class="image-link" href="'.$result["url"].'"data-lightbox="set" data-title="'.$result["comment"].'">
+      <img class="image" with="100" height ="100" src="'.$result["url"].'"/></a>';
+    }
+  }
 }
 
 ?>
