@@ -65,7 +65,7 @@ function deleteImage(id_Image)
     data: {id_Image: id_Image}
   })
   .done(function(data) {
-    console.log(da);
+    console.log(data);
   });
 
 }
