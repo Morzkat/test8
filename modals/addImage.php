@@ -24,7 +24,7 @@
         <div class="modal-header">
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
+          <h4 class="modal-title">Subir Imagen</h4>
         </div>
 
         <div class="modal-body">
@@ -33,7 +33,7 @@
 
            <div id="imgPreview"><img src="noimage.png" id="preview" alt=""></div>
 
-           <h3>IMG</h3>
+           <h3>Selecciona una imagen</h3>
 
            <input type="file" name="file" id="file" value="" required accept="image/*">
            <textarea name="comment" rows="2" cols="60" placeholder="comentario de la imagen" style="resize:none"></textarea><br>
@@ -42,12 +42,12 @@
 
          <div id="message"></div>
         </div>
-        
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
 
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
+        
+      </div>
     </div>
   </div>
 

@@ -11,10 +11,20 @@ if (isset($_FILES["file"]["type"]))
 
   move_uploaded_file($sourcePath,$targetPath) ; // Moving Uploaded file
 
-  $query = $conexion->query("INSERT INTO photos (url,comment) VALUES ('$targetPath','$comment');");
+  $query = $conexion->query("SELECT url FROM photos WHERE url = '$targetPath' ");
 
-  echo "<span id='success'>Imagen OK...!!</span>";
-  echo "<br/><b>Nombre IMG:</b> " . $_FILES["file"]["name"] . "<br>";
+  if ($conexion->rows($query) == 0)
+  {
+    $conexion->query("INSERT INTO photos (url,comment) VALUES ('$targetPath','$comment');");
+
+    echo "<span id='success'>Imagen OK...!!</span>";
+    echo "<br/><b>Nombre IMG:</b> " . $_FILES["file"]["name"] . "<br>";
+  }
+
+  else
+  {
+    echo "<br/><b>Existe IMG:</b> " . $_FILES["file"]["name"] . "<br>";
+  }
 
 }
 ?>
