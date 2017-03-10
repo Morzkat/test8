@@ -56,3 +56,16 @@ function imgLoaded(e)
   $('#preview').attr('height', '230px');
 
 }
+
+function deleteImage(id_Image)
+{
+  $.ajax({
+    url: 'deleteImage.php',
+    type: 'POST',
+    data: {id_Image: id_Image}
+  })
+  .done(function(data) {
+    console.log(da);
+  });
+
+}
