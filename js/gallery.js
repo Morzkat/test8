@@ -64,8 +64,9 @@ function deleteImage(id_Image)
     type: 'POST',
     data: {id_Image: id_Image}
   })
-  .done(function(data) {
-    console.log(data);
+  .done(function(data)
+  {
+    console.log($("#deleteImage"));
   });
 
 }
