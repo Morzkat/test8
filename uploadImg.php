@@ -13,10 +13,8 @@ if (isset($_FILES["file"]["type"]))
 
   $query = $conexion->query("INSERT INTO photos (url,comment) VALUES ('$targetPath','$comment');");
 
-  echo "<span id='Imagen OK...!!</span><br/>";
-  echo "<br/><b>File Name:</b> " . $_FILES["file"]["name"] . "<br>";
-  echo "<b>Size:</b> " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
+  echo "<span id='success'>Imagen OK...!!</span>";
+  echo "<br/><b>Nombre IMG:</b> " . $_FILES["file"]["name"] . "<br>";
 
-  echo $targetPath;
 }
 ?>
