@@ -32,7 +32,11 @@ require 'modals/deleteImage.php';
     <script src="js/gallery.js" charset="utf-8"></script>
 
     <script type="text/javascript">
-      $(document).ready(function() {
+      $(document).ready(function()
+      {
+          $("#comment").val(" ");
+
+        document.getElementById('file').value = "";
           add_Img();
       });
     </script>

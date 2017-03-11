@@ -1,10 +1,3 @@
-<?php
-
-
-
-
-
-?>
 
 <!DOCTYPE html>
 <html>
@@ -36,7 +29,7 @@
            <h3>Selecciona una imagen</h3>
 
            <input type="file" name="file" id="file" value="" required accept="image/*">
-           <textarea name="comment" rows="2" cols="60" placeholder="comentario de la imagen" style="resize:none"></textarea><br>
+           <textarea name="comment" rows="2" cols="60" id="comment" placeholder="comentario de la imagen" style="resize:none"></textarea><br>
            <input type="submit" value="Subir Imagen" name="button" class="submit" value="">
          </form>
 
@@ -46,7 +39,7 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
         </div>
-        
+
       </div>
     </div>
   </div>
