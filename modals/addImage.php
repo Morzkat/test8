@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Test 8</title>
   </head>
   <body>
 
@@ -30,7 +30,7 @@
 
            <input type="file" name="file" id="file" value="" required accept="image/*">
            <textarea name="comment" rows="2" cols="60" id="comment" placeholder="comentario de la imagen" style="resize:none"></textarea><br>
-           <input type="submit" value="Subir Imagen" name="button" class="submit" value="">
+           <input type="submit" class="btn btn-success" value="Subir Imagen" name="button" class="submit" value="">
          </form>
 
          <div id="message"></div>

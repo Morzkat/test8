@@ -7,7 +7,7 @@ function gallery()
 
 function add_Img()
 {
-  var comment = $("#comment").val();
+
   $("#fileToUpload").on('submit', function(e)
   {
     e.preventDefault();
@@ -23,8 +23,8 @@ function add_Img()
 
     })
     .done(function(data) {
-      $("#loading").hide();
       $("#message").html(data)
+      $("#comment").val(" ");
     });
   });
 
@@ -66,7 +66,20 @@ function deleteImage(id_Image)
   })
   .done(function(data)
   {
-    console.log($("#deleteImage"));
-  });
+    $("#deleteImage").fadeOut('slow', function()
+    {
+        $(this).modal('hide')
+    })
+    .fadeIn('slow', function()
+    {
+        $("#deleteImage .modal-body").load('p.php',
 
+          function()
+          {
+          /* Stuff to do after the page is loaded */
+          $("#deleteImage").modal('show');
+        });
+
+    });
+  });
 }
