@@ -1,10 +1,4 @@
 
-<?php
-include 'conexion.php';
-$conexion = new conexion();
-
-?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,7 +9,7 @@ $conexion = new conexion();
 
     <div class="container">
   <!-- Modal -->
-  <div class="modal fade" id="deleteImage" role="dialog">
+  <div class="modal fade" id="alterImage" role="dialog">
     <div class="modal-dialog">
 
       <!-- Modal content-->
@@ -23,7 +17,7 @@ $conexion = new conexion();
         <div class="modal-header">
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Borrar IMG</h4>
+          <h4 class="modal-title">Modificar IMG</h4>
         </div>
 
         <div class="modal-body">
@@ -33,12 +27,13 @@ $conexion = new conexion();
 
               if ($conexion->rows($query) > 0)
               {
-                  $conexion->show_Photos_For_Delete($query);
+                  $conexion->show_Photos_For_Modify($query);
               }
           ?>
         </div>
 
         <div class="modal-footer">
+          <div id="comment_Div"></div>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>

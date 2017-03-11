@@ -2,6 +2,7 @@
 
 require 'modals/addImage.php';
 require 'modals/deleteImage.php';
+require 'modals/alterImage.php';
 
 ?>
 
@@ -23,9 +24,9 @@ require 'modals/deleteImage.php';
   </head>
   <body>
 
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addImage" name="button">Agregar imagen</button>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addImage" name="button">Agregar imagen</button>
     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#deleteImage" name="button">Borrar imagen</button>
-    <button type="button" name="button">Modificar info imagen</button>
+    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#alterImage" name="button">Modificar info imagen</button>
 
     <script src="https://cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bootstrap/3.3.5/js/bootstrap.min.js"></script>

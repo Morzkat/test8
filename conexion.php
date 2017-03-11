@@ -20,10 +20,25 @@ class conexion extends mysqli
 
   function show_Photos($array)
   {
-    while ($result = $array->fetch_assoc())
+    $i = 0;
+    while ($i < 20)
     {
-      echo '<a class="image-link" href="'.$result["url"].'"data-lightbox="set" data-title="'.$result["comment"].'">
-      <img class="image" with="250" height ="250" src="'.$result["url"].'"/></a>';
+      $result = $array->fetch_assoc();
+      if (!file_exists($result["url"]))
+      {
+        $foto = "http://placehold.it/750x450";
+      }
+      else
+      {
+        $foto = $result["url"];
+      }
+
+      echo '<div class="col-md-3 portfolio-item">
+      <a class="image-link" href="'.$result["url"].'"data-lightbox="set" data-title="'.$result["comment"].'">
+      <img class="image" width="300px" height="200px" src="'.$foto.'"/></a>
+      </div>';
+
+      $i++;
     }
   }
 
@@ -31,9 +46,24 @@ class conexion extends mysqli
   {
     while ($result = $array->fetch_assoc())
     {
-      echo '<a class="image-link" href="'.$result["url"].'"data-lightbox="set" data-title="'.$result["comment"].'">
-      <img class="image" with="100" height ="100" src="'.$result["url"].'"/></a>
-      <button type="button" class="btn btn-danger" onclick="deleteImage('.$result["id"].')" name="button">Borrar</button>';
+
+      echo '<div class="col-md-3 portfolio-item">';
+      echo '<span class="btn btn-danger" onclick="deleteImage('.$result["id"].') id="close_X">x</span>
+      <a class="image-link" href="'.$result["url"].'"data-lightbox="set" data-title="'.$result["comment"].'">
+      <img class="image" width="100px" height="100px" src="'.$result["url"].'"/></a></div>';
+
+    }
+  }
+
+  function show_Photos_For_Modify($array)
+  {
+    while ($result = $array->fetch_assoc())
+    {
+
+      echo '<div class="col-md-3 portfolio-item">';
+      echo '<span class="btn btn-danger" onclick="deleteImage('.$result["id"].') id="close_X">Modificar</span>
+      <a class="image-link" href="'.$result["url"].'"data-lightbox="set" data-title="'.$result["comment"].'">
+      <img class="image" width="100px" height="100px" src="'.$result["url"].'"/></a></div>';
 
     }
   }
