@@ -39,6 +39,11 @@ $conexion = new conexion();
     }
 
     .pagination a:hover:not(.active) {background-color: #ddd;}
+    body
+    {
+      background-image: url("images/0.jpg");
+      background-size: 100%, 100%;
+    }
     </style>
     <!--[if lt IE 9]>
       <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -46,10 +51,10 @@ $conexion = new conexion();
     <![endif]-->
   </head>
   <body>
-
+    <button type="button" onclick="admin()" class="btn btn-primary" name="button">Admin</button>
     <div>
       <?php
-        $query = $conexion->query("SELECT * FROM photos");
+        $query = $conexion->query("SELECT * FROM photos LIMIT 20");
 
           if ($conexion->rows($query) > 0)
           {
@@ -57,21 +62,25 @@ $conexion = new conexion();
           }
       ?>
     </div><br>
-    
+
     <div class="pagination">
       <a href="#">&laquo;</a>
-      <a href="#">1</a>
-      <a class="active" href="#">2</a>
+      <a class="active" href="#">1</a>
+      <a  href="#">2</a>
       <a href="#">3</a>
       <a href="#">4</a>
-      <a href="#">5</a>
-      <a href="#">6</a>
+
       <a href="#">&raquo;</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="js/lightbox.js" charset="utf-8"></script>
-
+    <script type="text/javascript">
+      function admin()
+      {
+        location.href = "admin.php";
+      }
+    </script>
   </body>
 </html>

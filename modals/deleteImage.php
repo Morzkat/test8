@@ -1,10 +1,4 @@
 
-<?php
-include 'conexion.php';
-$conexion = new conexion();
-
-?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -39,7 +33,7 @@ $conexion = new conexion();
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
         </div>
       </div>
 
